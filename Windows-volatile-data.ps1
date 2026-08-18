@@ -1,3 +1,6 @@
+#Run first the Execution policy bypass
+#powershell.exe -ExecutionPolicy Bypass -File .\Get-VolatileData.ps1
+
 # Requires -RunAsAdministrator
 [CmdletBinding()]
 param (
