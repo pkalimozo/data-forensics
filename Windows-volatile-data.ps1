@@ -1,10 +1,10 @@
 #Run first the Execution policy bypass
-#powershell.exe -ExecutionPolicy Bypass -File .\Get-VolatileData.ps1
+#powershell.exe -ExecutionPolicy Bypass -File .\Windows-Volatile-Data.ps1
 
 # Requires -RunAsAdministrator
 [CmdletBinding()]
 param (
-    [string]$OutputDir = ".\VolatileData_$(ENV:COMPUTERNAME)_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+    [string]$OutputDir = ".\VolatileData_$($ENV:COMPUTERNAME)_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
 )
 
 # 1. Admin Privilege Check
