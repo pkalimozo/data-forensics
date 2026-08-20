@@ -3,77 +3,77 @@
 # ----------------------------------------------------------------------
 #Directory/Folder creation
 # ----------------------------------------------------------------------
-D1="volatile_data_$(date +%Y%m%d_%H%M%S)"
-mkdir "$D1"
+M1="volatile_data_$(date +%Y%m%d_%H%M%S)"
+mkdir "$M1"
 
 # ----------------------------------------------------------------------
-#Collect System Date and time
+#Collect system date and time
 # ----------------------------------------------------------------------
 echo "Collecting system date and time..."
-date > "$D1/Date.txt"
+date > "$M1/date.txt"
 
 # ----------------------------------------------------------------------
-#Collect System Uptime
+#Collect system uptime
 # ----------------------------------------------------------------------
-echo "Collecting System Uptime..."
-uptime > "$D1/uptime.txt"
+echo "Collecting system uptime..."
+uptime > "$M1/uptime.txt"
 
 # ----------------------------------------------------------------------
 #Collect logged-in users
 # ----------------------------------------------------------------------
 echo "Collecting logged-in users..."
-who -a > "$D1/users.txt"
+who > "$M1/users.txt"
 
 # ----------------------------------------------------------------------
 #Collect running processes
 # ----------------------------------------------------------------------
 echo "Collecting running processes..."
-ps aux > "$D1/processes.txt"
+ps aux > "$M1/ps.txt"
 
 # ----------------------------------------------------------------------
-#Collect network interface and configuration
+#Collect network interfaces and configuration
 # ----------------------------------------------------------------------
-echo "Collecting network interfaces and configuration..."
-ifconfig -a > "$D1/ifconfig.txt"
+echo "Collecting network inferfaces and configuration..."
+ifconfig > "$M1/network.txt"
 
 # ----------------------------------------------------------------------
 #Collect network connections
 # ----------------------------------------------------------------------
-echo "Collecting network connections..."
-netstat -anpt > "$D1/netstat.txt"
+echo "Collecting network network connections..."
+netstat -anv > "$M1/network-connections.txt"
 
 # ----------------------------------------------------------------------
 #Collect open files
 # ----------------------------------------------------------------------
 echo "Collecting open files..."
-sudo lsof > "$D1/open-files.txt"
+lsof > "$M1/files.txt"
 
 # ----------------------------------------------------------------------
-#Collect loaded kernel modules
+#Collect  loaded kernel extensions
 # ----------------------------------------------------------------------
-echo "Collecting loaded kernel modules..."
-lsmod > "$D1/lsmod.txt"
+echo "Collecting loaded kernel extensions..."
+kextstat > "$M1/kernel-extensions.txt"
 
 # ----------------------------------------------------------------------
-#Collect mounted filesystems
+#Collect mounted filesystem/storage
 # ----------------------------------------------------------------------
-echo "Collecting mounted filesystems..."
-mount > "$D1/mount.txt"
+echo "Collecting mounted filesystems and storages..."
+mount > "$M1/mount.txt"
 
 # ----------------------------------------------------------------------
 #Compress the directory into a zip file
 # ----------------------------------------------------------------------
 echo "Compressing the directory into a zip file..."
-zip -r "%D1"
+zip -r "$M1.zip" "$M1"
 
 # ----------------------------------------------------------------------
-#Deleting the original directory
+#Delete the original directory (Optional)
 # ----------------------------------------------------------------------
 echo "Deleting the original directory..."
-rm -rf "$D1"
+rm -rf "$M1"
 
+echo "Volatile data collection is complete!"
 
-echo "Volatile data collection is complete"
 
 # ----------------------------------------------------------------------
 #make this script executable. 
@@ -81,4 +81,5 @@ echo "Volatile data collection is complete"
 #run script: ./<filename.sh>
 #github.com/pkalimozo
 # ----------------------------------------------------------------------
+
 

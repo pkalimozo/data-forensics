@@ -137,3 +137,5 @@ Get-ChildItem -Path $OutputDir -File | Where-Object { $_.Name -ne "manifest.sha2
 } | Format-Table -AutoSize | Out-File -FilePath $manifestPath
 
 Write-Host "`n[+] Collection complete! All data stored in: $OutputDir" -ForegroundColor Green
+
+#github.com/pkalimozo
