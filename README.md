@@ -1,6 +1,6 @@
 # Agentless Volatile Data Collector
 
-A cross-platform triage collection repository for Digital Forensics and Incident Response (DFIR) and CSOC teams[cite: 1, 2, 3]. It contains scripts to gather volatile system artifacts across Windows, Linux, and macOS environments prior to reboot or network isolation[cite: 1, 2, 3].
+A cross-platform triage collection repository for Digital Forensics and Incident Response (DFIR) and CSOC teams. It contains scripts to gather volatile system artifacts across Windows, Linux, and macOS environments prior to reboot or network isolation.
 
 ---
 
